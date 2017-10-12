@@ -103,15 +103,16 @@ def main():
     tmpdir = mktmpdir()
 
     end_time = time.time() + int(np['timeout'] or 20)
-
+    
 # data.txt add manually contient list of file that we will check
   #  dirname = os.path.join('data', 'tftplist.txt')
-    with open('/Users/R00T/PycharmProjects/untitled/data.txt', 'r') as myfile:
+    dir = os.path.dirname(os.path.realpath(__file__))
+    with open(dir+'/data.txt', 'r') as myfile:
         files = myfile.read().replace('\n', '')
 # creat list of ips #files = np['file'].split()
 
 
-    with open('/Users/R00T/PycharmProjects/untitled/ips.txt', 'r') as myips:
+    with open(dir+'/ips.txt', 'r') as myips:
         ips = myips.read().replace('\n', '')
 
 
